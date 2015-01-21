@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Image galary Slideshow</title>
+<style type="text/css">
+body 
+{
+    background-color: "black";
+}
+.normal
+{
+border:4px solid #000000;
+}
+.sel
+{
+border:4px solid #ff0000;
+}
+#caption{
+position: absolute;
+color : blue;
+font: bold;
+top: 500px;
+left: 638px;
+font-size: 
+}
+#section
+{
+	width: 15px;
+}
+.arrows-mark{
+height: 50px;
+width: 50px;
+}
+</style>
+<!-- Script by hscripts.com -->
+<script src="jquery-1.9.1.min.js"></script>
+<script type="text/javascript">
+var i = 1; 
+
+function changeTitle(id)
+{
+	$.each($("#imgList").children(),function(){$(this).attr("title",$(this).attr("src").replace(".jpg",""))});
+}
+var image = new Array();   
+// LIST OF IMAGES 
+image[1] = "1.jpg"; 
+image[2] = "2.jpg"; 
+image[3] = "3.jpg";   
+image[4] = "4.jpg";   
+image[5] = "5.jpg";   
+image[6] = "6.jpg";
+image[7] = "7.jpg";
+image[8] = "8.jpg";
+image[9] = "9.jpg";
+image[10] = "10.jpg";
+image[11] = "11.jpg";   
+image[12] = "12.jpg";   
+
+
+var k = image.length;    
+var j = 1;
+var caption = new Array(); 
+
+// LIST OF CAPTIONS 
+caption[1] = "Caption for the first image"; 
+caption[2] = "Caption for the second image"; 
+caption[3] = "Caption for the third image"; 
+caption[4] = "Caption for the four image"; 
+caption[5] = "Caption for the five image"; 
+caption[6] = "Caption for the six image"; 
+caption[7] = "Caption for the seven image"; 
+caption[8] = "Caption for the eight image"; 
+caption[9] = "Caption for the nine image"; 
+caption[10] = "Caption for the ten image"; 
+caption[11] = "Caption for the eleven image"; 
+caption[12] = "Caption for the twelve image"; 
+var lastsel = 0;
+function next(){
+if( i == 12){
+	return false}
+	if( i == 1){
+	i = i + 3;
+	
+	}
+changeTitle();
+var img= document.getElementById("1"); 
+img.src= image[i]; 
+if(i < k ) { i = i + 1;}  
+else  { i = 1; }
+var img= document.getElementById("2"); 
+img.src= image[i]; 
+if(i < k ) { i = i + 1;}  
+var img= document.getElementById("3"); 
+img.src= image[i]; 
+if(i < k ) { i = i + 1;}  
+var img= document.getElementById("4"); 
+img.src= image[i]; 
+if ( i == 10 )
+{
+	i = i - 1; }
+SelectImage(1);
+
+}
+function prev()
+{	
+
+console.log(i);
+if( i == 1)
+	 { return false }
+	if( i == 12 || i == 9)
+	 { i = i - 2; }
+	if ( j == 1) { 
+	if( i == 7 )
+	{ i = i - 3; }
+   j++;
+ }
+var img= document.getElementById("4"); 
+img.src= image[i]; 
+if(i < k ) { i = i - 1;}  
+else  { i = 1; }
+var img= document.getElementById("3"); 
+img.src= image[i]; 
+if(i < k ) { i = i - 1;}  
+var img= document.getElementById("2"); 
+img.src= image[i]; 
+if(i < k ) { i = i - 1;}  
+var img= document.getElementById("1"); 
+img.src= image[i]; 
+SelectImage(4);
+changeTitle();
+}
+function swapImage(){ 
+var img= document.getElementById("slide"); 
+img.src= image[i]; 
+if(i < k ) { i = i + 4;}  
+else  { i = 0; } 
+setTimeout("swapImage()",5000); 
+
+changeTitle();
+} 
+function changeCap(id)
+{
+  document.getElementById("caption").innerHTML = srcnam.trim().replace(".jpg","");
+}
+function SelectImage(id)
+{
+if (lastsel > 0)
+{
+document.getElementById(lastsel).className = "normal";
+}
+document.getElementById(id).className = "sel";
+var srcnam = $("#"+id).attr("src");
+console.log(srcnam);
+document.getElementById(0).src = srcnam;
+document.getElementById(0).title = srcnam;
+document.getElementById("caption").innerHTML = srcnam.trim().replace(".jpg","");
+lastsel = id;
+console.log(i);
+changeTitle();
+}
+function LoadTrigger()
+{
+SelectImage(1);
+changeTitle();
+}
+window.onload = LoadTrigger; </script>
+</head>
+<body>
+<div align=center>
+<b>Simple Image gallery using plain Javascript.</b> </div>
+<span id="caption"></span>
+<table border=0 align=center>
+<tr>
+<td><div id="section">
+</div> </td>
+<td>
+<img id=0 src="" width=500 height=450>
+</td>
+</tr>
+<tr>
+<td><td align="center"style="font:small-caps bold 15px georgia; color:blue;"> 	
+<div id ="mydiv"></div>
+</td>
+</tr>	
+<tr>
+<td height=35></td>
+</tr>
+<td><div id="section">
+</div> </td>
+<td > 
+<img onclick="prev()" class="arrows-mark" title="Previous" alt ="Prev" height="25" width="15"src="next.png"/> 
+</td>
+<td id="imgList" valign=bottom>
+<img name="slide" id=1 class="normal" src= "1.jpg" width=115 height=80 onclick ="SelectImage(1)" />
+<img name="slide" id=2 class="normal" src="2.jpg" width=115 height=80 onclick ="SelectImage(2)" />
+<img name="slide" id=3 class="normal" src="3.jpg" width=115 height=80 onclick ="SelectImage(3)" />
+<img name="slide" id=4 class="normal" src="4.jpg" width=115 height=80 onclick ="SelectImage(4)" />
+</td>	
+<td>
+<img onclick="next()" class="arrows-mark" title="Next" alt ="Next" height="25" width="15" src="prev.jpg"/> 
+</td>	
+</tr>	
+</table>
+</body>
+</html>

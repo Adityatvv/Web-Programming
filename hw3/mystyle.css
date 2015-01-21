@@ -1,0 +1,30 @@
+body
+{
+     font-family:verdana;
+	 padding-left:150px;
+	padding-right:150px;	
+     padding-top:75px;	 
+     background-color: #B4C1E6;
+}
+div.img
+{
+text-align:right;
+}
+.submit_button
+{
+	width:100%;
+        margin: 0px;
+        height: 35px;
+        padding: 5px 20px 5px 20px;
+        font-weight: bold;
+        font-size: large;
+        text-align: center;
+        vertical-align: middle;
+	background-color: #000040;
+	color: #FFFFFF;
+}
+
+.h2_style
+{
+text-align:center;
+}

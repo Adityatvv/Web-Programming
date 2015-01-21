@@ -1,0 +1,49 @@
+
+  body {
+    background-color: lightblue;
+  }
+    #header {
+    background-color: darkblue;
+    color:yellow;
+    text-align:right;
+    padding:5px;
+  }  
+  #nav {
+    line-height:30px;    
+    height:200px;
+    width:300px;
+    padding:5px;	      
+  }
+    #section {
+    width:350px;
+    padding:5px;
+  }  
+  #aside {
+    line-height:20px; 
+    width:200px;
+    text-align:left;
+    padding: 5px;     
+  } 
+    #footer {
+    background-color:black;
+    color:white;
+    clear:both;
+    text-align:center;
+    padding:5px;      
+  } 
+  a:link  {
+    color: white;
+    text-decoration: none;
+  }
+  a:visited {
+    color: grey;
+  } 
+  a.navLink:hover   {
+    color: yellow;
+    font-weight: bold;
+  }
+  a.external:hover {
+    text-decoration: none;
+    color: red; 
+    font-weight: bold;
+  }

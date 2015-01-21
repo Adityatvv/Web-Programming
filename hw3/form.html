@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<HTML lang="en-US">
+     <head>
+         <title> Survey Form</title>
+		 <link rel="stylesheet" type="text/css" href="mystyle.css">
+	     <meta charset="utf-8" />
+	     <meta name="keywords" content="" />
+	     <meta name="description" content="" />
+ 
+<script type="text/javascript">
+
+function show(){ document.getElementById('OtherMajor').style.display = 'block'; }
+
+function hide(){ document.getElementById('OtherMajor').style.display = 'none'; }
+
+
+</script>
+
+</head>
+	
+    <body>
+    <img src="http://www2.kent.edu/interface_img/header_bg.jpg" alt="Kent State University" style="width:992px;height:145px">
+	 
+	<h2 class="h2_style"><b><code>SURVEY OF GRADUATING STUDENTS</code></b></h2><br/>
+	 
+	 <h6 style="color:red;">*Required Field</h6> <br/>
+	 <form action="process.php" method="POST">
+
+<fieldset>
+  <legend><b>DETAILS</b></legend><br/>
+
+<code>First Name* :</code> <input type="text" name="Fname" size="20" required="required" placeholder="Enter First Name"/><br/><br/>
+
+<code>Last Name* : </code><input type="text" name="Lname" size="20" required="required" placeholder="Enter Last Name"/><br/><br/>
+
+<code>Kent Email ID*: </code><input type="email" name="Email" pattern="^[a-z0-9._%+-]+@kent.edu" required="required" placeholder="yourmail@kent.edu"/> <br/><br/>
+
+</fieldset><br/><br/>
+
+<fieldset>
+  <legend><b>DEGREE HISTORY</b></legend><br/>
+
+<code>Major*</code>:<br/><br/>
+
+<input id="c" type="radio" name="major" value="CS" onclick="hide();" checked/><label for="c">CS</label>
+
+<input id="d" type="radio" name="major" value="Digital Sciences" onclick="hide();"/><label for="d">Digital Sciences</label>
+
+<input id="j" type="radio" name="major" value="JMC" onclick="hide();" /><label for="j">JMC</label>
+
+<input id="o" type="radio" name="major" value="other" required="required" onclick="show();"/><label for="o">Other</label><br/><br/>
+<input name="OtherMajor" type="text" id="OtherMajor" style="display: none;" class="OtherMajor" size="15" placeholder="Enter Major"/><br/>
+
+<code>Degree*:</code><br/><br/>
+
+<input id="ms" type="radio" name="degree" value="MS" checked /><label for="ms">MS</label>
+
+<input id="ma" type="radio" name="degree" value="MA" /><label for="ma">MA</label>
+
+<input id="s" type="radio" name="degree" value="BS" /><label for="s">BS</label>
+
+<input id="a" type="radio" name="degree" value="BA" required="required"/><label for="a">BA</label><br/><br/>
+
+<code>Year of Entry to Kent State*:</code> <input type="number" name="Yentry" min="2000" max="2019" required="required" placeholder="YYYY"/><br/><br/>
+
+<code>Year of Graduation*: </code><input type="number" name="Ygrad" min="2001" max="2020" required="required" placeholder="YYYY"/><br/><br/>
+
+</fieldset><br/><br/>
+
+
+<fieldset>
+  <legend><b>ADDITIONAL ACTIVITIES</b></legend><br/>
+
+<code>Honors College:</code> <input id="hy" type="radio" name="honors" value="YES" /><label for="hy">YES</label>
+
+<input id="hn" type="radio" name="honors" value="NO" required="required" checked/><label for="hn">NO</label><br/><br/>
+
+<code>Internship: </code><input id="iny" type="radio" name="intern" value="YES" /><label for="iny">YES</label>
+
+<input id="inn" type="radio" name="intern" value="NO" required="required" checked/><label for="inn">NO</label><br/><br/>
+
+</fieldset><br/><br/>
+
+<fieldset>
+  <legend><b>DESIRED POSITION & LOCATION</b></legend><br/>
+<code>Position*:</code> <input type="text" name="position" size="20" required="required" placeholder="Enter Position"/><br/><br/>
+<code>Location*: </code><select id="loc" name="location" size="1" required="required">
+<option value=""> Select Value</option>
+<option value="Akron"> Akron </option>
+<option value="Cleveland"> Cleveland </option>
+<option value="East Coast"> East Coast </option>
+<option value="Mid West"> Mid-west </option>
+<option value="NE Ohio"> NE Ohio </option>
+<option value="Ohio"> Ohio </option>
+<option value="West Coast"> West coast </option>
+</select>
+</fieldset><br/><br/>		 			
+<input type="submit" value="SUBMIT" class="submit_button"/>
+</form>
+</body>
+</html>
