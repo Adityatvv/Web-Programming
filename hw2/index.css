@@ -24,8 +24,8 @@
     text-align:left;
     padding: 5px;     
   } 
-    #footer {
-    background-color:black;
+  #footer {
+    background-color:#000000;
     color:white;
     clear:both;
     text-align:center;
